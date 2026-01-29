@@ -14,6 +14,11 @@ Before doing any of this, if you're not already on firmware V2.3.5.34, please do
 ## HelperScript Installation
 Follow the instructions here: https://guilouz.github.io/Creality-Helper-Script-Wiki/
 
+## Things you'll need to adjust
+- Your Z offset
+  - On my model (2003), lots of users report offset issues.  Mine is set in klipper to +0.5
+  - I suggest doing a test print of a flat single layer, watching and adjusting manually as it prints.
+
 ## Config Files
 .\Klipper
 
