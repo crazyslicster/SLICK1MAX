@@ -9,11 +9,15 @@ I also missed using Orca, Fluidd and Klipper with HelperScript so I put some big
 
 Although a work in progress still, I've now got it tuned great.
 
+Before doing any of this, if you're not already on firmware V2.3.5.34, please do so and reset your config
+
+## HelperScript Installation
+Follow the instructions here: https://guilouz.github.io/Creality-Helper-Script-Wiki/
+
 ## Config Files
 .\Klipper
 
-After you've installed the HelperScript from here: https://guilouz.github.io/Creality-Helper-Script-Wiki/
-You can copy the config files.
+After you've installed the HelperScript, you can copy my config files from this repo to /usr/data/printer_data/config
 
 ### Things it does:
 - Some modifications to the Creality versions of the T0, T1, T2 and T3 commands so that head it properly set prior to printing
