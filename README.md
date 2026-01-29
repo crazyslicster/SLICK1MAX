@@ -14,6 +14,21 @@ Before doing any of this, if you're not already on firmware V2.3.5.34, please do
 ## HelperScript Installation
 Follow the instructions here: https://guilouz.github.io/Creality-Helper-Script-Wiki/
 
+- Install firmware V2.3.5.34
+- Reset to factory: echo "all" | nc -U /var/run/wipe.sock
+- Enable root access from the touch screen
+- Connect SSH
+- Install helper script:
+	- git clone --depth 1 https://github.com/Guilouz/Creality-Helper-Script.git /usr/data/helper-script
+	- sh /usr/data/helper-script/helper.sh
+	- Installed everything but Mainsail(don't  use it) ( 1, 2, 4, 5, 8, 9, 10, 11, 12, 13, 14, 16 ) - REMOTE ACCESS stuff on your preferance.
+	- Settings -> Software Updates -> Update if needed
+	- Settings -> Cameras -> Add Camera
+- Copy the Klipper config files from this repo to /usr/data/printer_data/config
+- Load the Ocro Profiles from this repo File -> Import -> Import Configs
+	*** be careful with some of the printer gcode - there is a plate scraping macro!
+
+
 ## Things you'll need to adjust
 - Your Z offset
   - On my model (2003), lots of users report offset issues.  Mine is set in klipper to +0.5
