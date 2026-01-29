@@ -21,7 +21,7 @@ Follow the instructions here: https://guilouz.github.io/Creality-Helper-Script-W
 - Install helper script:
 	- git clone --depth 1 https://github.com/Guilouz/Creality-Helper-Script.git /usr/data/helper-script
 	- sh /usr/data/helper-script/helper.sh
-	- Installed everything but Mainsail(don't  use it) ( 1, 2, 4, 5, 8, 9, 10, 11, 12, 13, 14, 16 ) - REMOTE ACCESS stuff on your preferance.
+	- Installed everything but Mainsail(don't  use it) ( 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16 ) - REMOTE ACCESS stuff on your preferance.
 	- Settings -> Software Updates -> Update if needed
 	- Settings -> Cameras -> Add Camera
 - Copy the Klipper config files from this repo to /usr/data/printer_data/config
@@ -40,21 +40,22 @@ Follow the instructions here: https://guilouz.github.io/Creality-Helper-Script-W
 After you've installed the HelperScript, you can copy my config files from this repo to /usr/data/printer_data/config
 
 ### Things it does:
-- Some modifications to the Creality versions of the T0, T1, T2 and T3 commands so that head it properly set prior to printing
-- Dummied a couple of commands like CX_NOZZLE_WIPE so it no longer runs
-- I have a custom HEAT_SOAK gcode to detect larger prints and pause to left the bed soak some heat. (work in progress)
-- Fix for SET_HOTEND_FAN error - just a dummy gcode\
+- Some modifications to the Creality versions of the T0, T1, T2 and T3 commands so that it heats the bed and extruder to the right temp prior to printing
+- Dummied a couple of commands like CX_NOZZLE_WIPE so they no longer run
+- I have a custom HEAT_SOAK gcode to detect larger prints and pause to left the bed soak some heat.
+	- work in progress - just detects large bed usage but should probably do front edge detection instead
+- Fix for SET_HOTEND_FAN error - just a dummy gcode to do nothing.
 - For now it uses KAMP but you'll want to deactive the adaptive purge if you use my Orca Profiles
-  - I may remove KAMP altogether and add the custom gcode I'm testing to do a full mesh every few prints
+  - I may remove KAMP altogether and add the custom gcode for full mesh every few prints - would save time in the long run
 
 ## Orca Profiles
 .\OrcaProfiles
 
 For now, you will really need to use these profiles as they go hand and hand with the garbage that Creality does under the hood.
-You'll see some of the layer change codes I had to do because creality does some strange stuff that we need to undue and have things run in a specific order.
+You'll see some of the layer change codes I had to do because creality does strange stuff that we need to undue and have things run in a specific order.
 To understand what I'm talking about, here is the specific GCODE I added to the layer change:
 
-*** Be careful with the Machine Start gcode as I've added a plate scraping command instead of the slow wipe creailty does. You may not want this!
+*** Be careful with the Printer LAYER CHANGE gcode as I've added a plate scraping command instead of the slow wipe creailty does. You may not want this!
 
 ```
 ;LAYER CHANGE
